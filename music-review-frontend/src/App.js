@@ -1,12 +1,33 @@
 import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import SongsComponent from './components/SongsComponent';
+import HeaderComponent from './components/HeaderComponent';
+import FooterComponent from './components/FooterComponent';
+import HomeComponent from './components/HomeComponent';
+import CreateSongComponent from './components/Songs/CreateSongComponent';
 
 function App() {
   return (
-    <div className="container">
-     <SongsComponent></SongsComponent>
+
+    <div>
+      <Router>
+        <div className="container">
+           <HeaderComponent></HeaderComponent>
+               <div className="container">
+                  <Switch>
+                    <Route path="/" exact component={HomeComponent}></Route>
+                    <Route path="/songs/" exact component= {SongsComponent}></Route>
+                    <Route path="/songs/add" exact component= {CreateSongComponent}></Route>
+                  </Switch>
+                  <FooterComponent/>
+               </div>
+        </div>
+      </Router>
+  
     </div>
+
+    
   );
 }
 

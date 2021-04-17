@@ -8,6 +8,7 @@ class SongsComponent extends Component {
             this.state={
                 songs: []
             }
+            this.addSong = this.addSong.bind(this);
     }
 
     componentDidMount(){
@@ -16,10 +17,18 @@ class SongsComponent extends Component {
         });
     }
 
+    addSong(){
+            this.props.history.push('/songs/add');
+    }
+
     render() {
         return (
             <div>
             <h2 className="text-center"> Songs List </h2>
+                <div className="row">
+                    <button className="btn btn-primary" onClick={this.addSong}> Add Song </button>
+                </div>
+
                 <div className="row">
                     <table className="table table-striped table-bordered">
                     <thead>
@@ -33,9 +42,9 @@ class SongsComponent extends Component {
                         {
                             this.state.songs.map(song => 
                                 <tr key={song.id}>
-                                <td> {song.name} </td>
-                                <td> {song.artistName} </td>
-                                <td> {song.countryArea} </td>    
+                                <td> <center>{song.name}</center> </td>
+                                <td> <center>{song.artistName}</center> </td>
+                                <td> <center>{song.countryArea}</center> </td>    
                                 </tr>)}
                     </tbody>
                     </table>
