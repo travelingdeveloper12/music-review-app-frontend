@@ -28,7 +28,6 @@ class SongsComponent extends Component {
                 <div className="row">
                     <button className="btn btn-primary" onClick={this.addSong}> Add Song </button>
                 </div>
-
                 <div className="row">
                     <table className="table table-striped table-bordered">
                     <thead>
@@ -41,7 +40,7 @@ class SongsComponent extends Component {
                     <tbody>
                         {
                             this.state.songs.map(song => 
-                                <tr key={song.id}>
+                                <tr key={song.id} >
                                 <td> <center>{song.name}</center> </td>
                                 <td> <center>{song.artistName}</center> </td>
                                 <td> <center>{song.countryArea}</center> </td>    

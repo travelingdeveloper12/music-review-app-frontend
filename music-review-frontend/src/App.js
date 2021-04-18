@@ -6,6 +6,7 @@ import HeaderComponent from './components/HeaderComponent';
 import FooterComponent from './components/FooterComponent';
 import HomeComponent from './components/HomeComponent';
 import CreateSongComponent from './components/Songs/CreateSongComponent';
+import TestComponent from './components/Songs/TestComponent';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
                <div className="container">
                   <Switch>
                     <Route path="/" exact component={HomeComponent}></Route>
+                    <Route path="/home" exact component={TestComponent}></Route>
                     <Route path="/songs/" exact component= {SongsComponent}></Route>
                     <Route path="/songs/add" exact component= {CreateSongComponent}></Route>
                   </Switch>
